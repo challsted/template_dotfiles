@@ -84,7 +84,7 @@ bind S-Right select-window -t +1 # Move Window Right 1
 # Resize
 #####
 
-bind -r ^ resize-pane -U 5 # Resize Pane by a lot 
+bind -r ^ resize-pane -U 5 # Resize Pane by a lot
 bind -r + resize-pane -U 1 # Resize Pane by a little with the rest
 bind -r - resize-pane -D 1
 bind -r < resize-pane -L 1
@@ -143,49 +143,12 @@ set -g status-justify centre
 # Right Bar
 #set -g status-right 'CPU:#{cpu_percentage} | Batt:#{battery_percentage} | %a %h-%d %H:%M'
 set -g status-right '%a %h-%d %H:%M'
-set -g status-right-length 40 
+set -g status-right-length 40
 
 #####
 # Panes
 ####
 set-option -g pane-border-fg green
 set-option -g pane-border-bg black
- 
 set-option -g pane-active-border-fg green
 set-option -g pane-active-border-bg green
-
-#####
-# Tmux Plugin Manager (TPM) 
-#
-# Tmux - TPM
-# Prefix + I = Install
-# Prefix + U = Update
-# Prefix + u = Uninstll Unused
-#####
-
-#List of Plugins
-set -g @tpm_plugins '         \
-  tmux-plugins/tpm            \
-  tmux-plugins/tmux-battery   \
-  tmux-plugins/tmux-cpu       \
-  tmux-plugins/tmux-yank      \
-  tmux-plugins/tmux-sidebar   \
-  davidscholberg/tmux-cluster \
-'
-
-# Tmux - Yank
-set -g @yank_selection 'clipboard'
-
-# Tmux - Sidebar
-set -g @sidebar-tree 't'                #Prefix t Pop Open Tree
-set -g @sidebar-tree 'T'                #Prefix T Pop Open Tree and Focus Tree 
-set -g @sidebar-tree-command 'tree -C'  #Attempt to "Colorize" Tree
-
-#Tmux-Cluster
-#Uncomment if you want to set it to something non-default, set to default to prevent accidents
-#set -g @tmux_cluster_prompt_key C
-
-#Initializes Tmux Plugin Manager
-#KEEP THIS AT THE VERY BOTTOM
-
-run-shell '~/.tmux/plugins/tpm/tpm'
